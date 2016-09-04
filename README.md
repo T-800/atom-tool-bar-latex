@@ -68,6 +68,9 @@ It also change the scope of few snippet (ex : `\sum{}{}` now only show in `$ .. 
 
 # Thanks
 tool-bar : https://atom.io/packages/tool-bar
+
 tool-bar-markdown : https://atom.io/packages/tool-bar-markdown-writer
+
 markdown-writer : https://atom.io/packages/markdown-writer
+
 markdown-preview-enhanced : https://atom.io/packages/markdown-preview-enhanced

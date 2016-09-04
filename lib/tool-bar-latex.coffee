@@ -202,7 +202,6 @@ module.exports =
       'tool-bar-latex:toggle-underline': => @triggerSnippet("__")
       'tool-bar-latex:insert-table': => @insert_table()
 
-
     @disposables.add atom.workspace.onDidStopChangingActivePaneItem (item) =>
       visibility = atom.config.get('tool-bar-latex.visibility')
 
@@ -241,7 +240,6 @@ module.exports =
     curPos = editor.getCursorBufferPosition()
     editor.insertText(e)
     atom.views.getView(editor).focus()
-
 
   insert_table:() ->
     InsertTableView = require './insert-table-view'
