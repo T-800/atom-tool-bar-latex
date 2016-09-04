@@ -1,0 +1,763 @@
+'.text.tex.latex':
+# Document level
+ 	'Paragraph':
+   	'prefix'          :	'par'
+   	'body'            :	'\\\\paragraph{${1:part name}}\n\\\\label{part:${1:part label}}\n$2'
+   	'description'     :	'Add new paragraph'
+   	'rightLabelHTML'  :	'\\paragraph{}'
+ 	'Chapter':
+   	'prefix'          :	'cha'
+   	'body'            :	'\\\\chapter{${1:chapter name}}\n\\\\label{chap:${1:chapter label}}\n$2'
+   	'description'     :	'Add new chapter'
+   	'rightLabelHTML'  :	'\\chapter{}'
+ 	'Section':
+   	'prefix'          :	'sec'
+   	'body'            :	'\\\\section{${1:section name}}\n\\\\label{sec:${1:section label}}\n$2'
+   	'description'     :	'Add new section'
+   	'rightLabelHTML'  :	'\\section{}'
+ 	'Sub Section':
+   	'prefix'          :	'sub'
+   	'body'            :	'\\\\subsection{${1:subsection name}}\n\\\\label{sub:${1:subsection label}}\n$2'
+   	'description'     :	'Add new subsection'
+   	'rightLabelHTML'  :	'\\subsection{}'
+ 	'Sub Sub Section':
+   	'prefix'          :	'subs'
+   	'body'            :	'\\\\subsubsection{${1:subsubsection name}}\n\\\\label{subs:${1:subsubsection label}}\n$2'
+   	'description'     :	'Add new subsubsection'
+   	'rightLabelHTML'  :	'\\subsubsection{}'
+ 	'Sub Paragraph':
+   	'prefix'          :	'subp'
+   	'body'            :	'\\\\subparagraph{${1:subparagraph name}}\n\\\\label{subp:${1:subparagraph label}}\n$2'
+   	'description'     :	'Add new subparagraph'
+   	'rightLabelHTML'  :	'\\subparagraph{}'
+# Environement
+ 	'Align(ed)':
+   	'prefix'          :	'ali'
+   	'body'            :	'\\\\begin{align}\n\t$1\n\\\\end{align}'
+   	'description'     :	'Add new align Env'
+   	'rightLabelHTML'  :	'\\begin{align}...\\end{align}'
+ 	'Description':
+   	'prefix'          :	'desc'
+   	'body'            :	'\\\\begin{description}\n\t\\\\item[$1]$2\n\\\\end{description}'
+   	'description'     :	'Add new description Env'
+   	'rightLabelHTML'  :	'\\begin{description}...\\end{description}'
+ 	'Enumerate':
+   	'prefix'          :	'enum'
+   	'body'            :	'\\\\begin{enumerate}\n\t\\\\item $1\n\\\\end{enumerate}'
+   	'description'     :	'Add new enumerate Env'
+   	'rightLabelHTML'  :	'\\begin{enumerate}...\\end{enumerate}'
+ 	'Itemize':
+   	'prefix'          :	'item'
+   	'body'            :	'\\\\begin{itemize}\n\t\\\\item $1\n\\\\end{itemize}'
+   	'description'     :	'Add new itemize Env'
+   	'rightLabelHTML'  :	'\\begin{itemize}...\\end{itemize}'
+ 	'Split':
+   	'prefix'          :	'spl'
+   	'body'            :	'\\\\begin{split}\n\t$0\n\\\\end{split}'
+   	'description'     :	'Add new split Env'
+   	'rightLabelHTML'  :	'\\begin{split}...\\end{split}'
+ 	'Equation':
+   	'prefix'          :	'eq'
+   	'body'            :	'\\\\begin{equation}\n\t$0\n\\\\end{equation}'
+   	'description'     :	'Add new equation Env'
+   	'rightLabelHTML'  :	'\\begin{equation}...\\end{equation}'
+ 	'Gather(ed)':
+    'prefix'          :	'gat'
+    'body'            :	'\\\\begin{gather}\n\t$0\n\\\\end{gather}'
+    'description'     :	'Add new gather Env'
+    'rightLabelHTML'  :	'\\begin{gather}...\\end{gather}'
+ 	'Cases':
+    'prefix'          :	'cas'
+    'body'            :	'\\\\begin{cases}\n\t${1:equation}, &\\\\text{ if }${2:case}\\\\\\\\\n\t$0\n\\\\end{cases}'
+    'description'     :	'Add new cases Env'
+    'rightLabelHTML'  :	'\\begin{cases}...\\end{cases}'
+# Element
+ 	'Figure':
+   	'prefix'          :	'figure'
+   	'body'            :	'Figure~\\\\ref{$1} $2'
+ 	'Listing':
+   	'prefix'          :	'listing'
+   	'body'            :	'${1:Listing}~\\\\ref{${2:lst:}}$0'
+ 	'Page':
+   	'prefix'          :	'page'
+   	'body'            :	'${1:page}~\\\\pageref{$2}$0'
+ 	'Table':
+   	'prefix'          :	'table'
+   	'body'            :	'${1:Table}~\\\\ref{${2:tab:}}$0'
+ 	'Display Math — \\\\[ … \\\\]':
+   	'prefix'          :	'$$'
+   	'body'            :	'\\\\[\n\t$1\n\\\\]'
+   	'description'     :	'Add new equation display block'
+   	'rightLabelHTML'  :	'\\[...\\]'
+ 	'Display Math — $$':
+   	'prefix'          :	'ml'
+   	'body'            :	'\$$1\$'
+   	'description'     :	'Add new equation display inline'
+   	'rightLabelHTML'  :	'$ ... $'
+# Others
+ 	'\\\\begin{}…\\\\end{}':
+   	'prefix'          :	'begin'
+   	'body'            :	'\\\\begin{${1:env}}\n\t$2\n\\\\end{${1:env}}'
+   	'description'     :	'Add new Empty Env'
+   	'rightLabelHTML'  :	'\\begin{}...\\end{}'
+ 	'textit':
+   	'prefix'          :	'//'
+   	'body'            :	'\\\\textit{$1} $2'
+   	'description'     :	'Add italic text'
+   	'rightLabelHTML'  :	'\\textit{...}'
+ 	'textbold':
+   	'prefix'          :	'**'
+   	'body'            :	'\\\\textbf{$1} $2'
+   	'description'     :	'Add bold text'
+   	'rightLabelHTML'  :	'\\textbf{...}'
+ 	'textunderline':
+   	'prefix'          :	'__'
+   	'body'            :	'\\\\underline{$1} $2'
+   	'description'     :	'Add underline text'
+   	'rightLabelHTML'  :	'\\underline{...}'
+
+# Beamer
+'.text.tex.latex.beamer':
+ 	'Frame':
+   	'prefix'          :	'frame'
+   	'body'            :	'\\\\begin{frame}[t]{${1:title}}\n\t${2:body}\n\\\\end{frame}\n%--- Next Frame ---%'
+ 	'Columns':
+   	'prefix'          :	'cols'
+   	'body'            :	'\\\\begin{columns}\n\\\\begin{column}[T]{$1cm}\n$3\n\\\\end{column}\n\\\\hfill\n\\\\begin{column}[T]{$2cm}\n\n\\\\end{column}\n\\\\end{columns}\n'
+
+
+# Other
+'.text.tex.latex .meta.function.environment.list':
+ 	'\\\\item':
+   	'prefix'          :	'itd'
+   	'body'            :	'\\\\item ${1:item}'
+
+
+# Math Equation
+'.text.tex.latex .other.math':
+# Math
+ 	'sum{}{}':
+   	'prefix'          :	'sum'
+   	'body'            :	'\\\\sum_{$1}^{$2} $3'
+   	'description'     :	'Add sum Equation'
+   	'rightLabelHTML'  :	'\\sum_{...}^{..} ...'
+ 	'prod{}{}':
+   	'prefix'          :	'prod'
+   	'body'            :	'\\\\prod_{$1}^{$2} $3'
+   	'description'     :	'Add prod Equation'
+   	'rightLabelHTML'  :	'\\prod_{...}^{..} ...'
+ 	'bigcap{}{}':
+   	'prefix'          :	'bcap'
+   	'body'            :	'\\\\bcap_{$1}^{$2} $3'
+   	'description'     :	'Add bigcap Equation'
+   	'rightLabelHTML'  :	'\\bigcap_{...}^{..} ...'
+ 	'bigcup{}{}':
+   	'prefix'          :	'bcup'
+   	'body'            :	'\\\\bcup_{$1}^{$2} $3'
+   	'description'     :	'Add bigcup Equation'
+   	'rightLabelHTML'  :	'\\bigcup_{...}^{..} ...'
+ 	'bigwedge{}{}':
+   	'prefix'          :	'band'
+   	'body'            :	'\\\\band_{$1}^{$2} $3'
+   	'description'     :	'Add bigwedge Equation'
+   	'rightLabelHTML'  :	'\\bigwedge_{..}^{..} ...'
+ 	'bigvee{}{}':
+   	'prefix'          :	'bor'
+   	'body'            :	'\\\\bigvee_{$1}^{$2} $3'
+   	'description'     :	'Add bigvee Equation'
+   	'rightLabelHTML'  :	'\\bigvee_{..}^{..} ...'
+ 	'exposant':
+   	'prefix'          :	'^'
+   	'body'            :	'^{$1} $2'
+   	'description'     :	'Add exposant	'
+   	'rightLabelHTML'  :	'^{..}'
+ 	'indice':
+   	'prefix'          :	'ind'
+   	'body'            :	'_{$1} $2'
+   	'description'     :	'Add indice'
+   	'rightLabelHTML'  :	'_{..}'
+ 	'indice_exposant':
+   	'prefix'          :	'^_'
+   	'body'            :	'_{$1}^{$2} $3'
+   	'description'     :	'Add indice & exposant'
+   	'rightLabelHTML'  :	'_{..}^{..}'
+ 	'frac':
+   	'prefix'          :	'frac'
+   	'body'            :	'\\\\frac{$1}{$2} $3'
+   	'description'     :	'Add Fraction'
+   	'rightLabelHTML'  :	'\\frac{..}{..}'
+ 	'lim':
+   	'prefix'          :	'lim'
+   	'body'            :	'\\\\lim_{$1 \\\\rightarrow $2} $3'
+   	'description'     :	'Add limit Equation'
+   	'rightLabelHTML'  :	'\\lim_{.. \\rightarrow ..} ..'
+ 	'overline{}':
+   	'prefix'          :	'over'
+   	'body'            :	'\\\\overline{$1} $2'
+   	'description'     :	'Add overline'
+   	'rightLabelHTML'  :	'\\overline{..} ..'
+ 	'overleftarrow{}':
+   	'prefix'          :	'over<'
+   	'body'            :	'\\\\overleftarrow{$1} $2'
+   	'description'     :	'Add overline with leftarrow'
+   	'rightLabelHTML'  :	'\\overleftarrow{..} ..'
+ 	'overrightarrow{}':
+   	'prefix'          :	'over>'
+   	'body'            :	'\\\\overrightarrow{$1} $2'
+   	'description'     :	'Add overline with rightarrow'
+   	'rightLabelHTML'  :	'\\overrightarrow{..} ..'
+ 	'\\big(a\\big)':
+   	'prefix'          :	'()'
+   	'body'            :	'\\\\big( $1 \\\\big) $2'
+   	'description'     :	'Add big \( \)'
+   	'rightLabelHTML'  :	'\\big( .. \\big)'
+ 	'\\big\\{a\\big\\}':
+   	'prefix'          :	'{}'
+   	'body'            :	'\\\\big\\\\{ $1 \\\\big\\\\} $2'
+   	'description'     :	'Add big \{ \}'
+   	'rightLabelHTML'  :	'\\big\\{ .. \\big\\}'
+ 	'sqrt':
+   	'prefix'          :	'sqrt'
+   	'body'            :	'\\\\sqrt{$1} $2'
+   	'description'     :	'Add sqrt'
+   	'rightLabelHTML'  :	'\\\\sqrt{..}'
+ 	'sqrtn':
+   	'prefix'          :	'sqrtn'
+   	'body'            :	'\\\\sqrt[$1]{$2} $3'
+   	'description'     :	'Add sqrt n'
+   	'rightLabelHTML'  :	'\\\\sqrt[..]{..}'
+ 	'widehat':
+   	'prefix'          :	'h^'
+   	'body'            :	'\\\\widehat{$1} $2'
+   	'description'     :	'Add widehat'
+   	'rightLabelHTML'  :	'\\\\widehat{..}'
+ 	'widetilde':
+   	'prefix'          :	'h~'
+   	'body'            :	'\\\\widetilde{$1} $2'
+   	'description'     :	'Add widetilde'
+   	'rightLabelHTML'  :	'\\\\widetilde{..}'
+ 	'bmatrix':
+   	'prefix'          :	'bmat'
+   	'body'            :	'\\\\begin{bmatrix}\n\t$1 & b \\\\\\\\\n\t$2 & d \\\\\\\\\n\\\\end{bmatrix}'
+   	'description'     :	'Add bmatrix'
+   	'rightLabelHTML'  :	'\\begin{bmatrix} .. & .. \\\\ .. & .. \\end{bmatrix}'
+#Relations
+ 	'leq' :
+   	'prefix'          :	'leq'
+   	'body'            :	'\\\\leq'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\leq'
+ 	'geq' :
+   	'prefix'          :	'geq'
+   	'body'            :	'\\\\geq'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\geq'
+ 	'prec' :
+    'prefix'          :	'prec'
+   	'body'            :	'\\\\prec'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\prec'
+ 	'succ' :
+   	'prefix'          :	'succ'
+   	'body'            :	'\\\\succ'
+   	'description'     :	'Add	'
+  'preceq' :
+   	'rightLabelHTML'  :	'\\succ'
+   	'prefix'          :	'prec='
+   	'body'            :	'\\\\preceq'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\preceq'
+  'succeq' :
+    'prefix'          :	'succ='
+    'body'            :	'\\\\succeq'
+    'description'     :	'Add	'
+    'rightLabelHTML'  :	'\\succeq'
+  'll' :
+    'prefix'          :	'<<'
+    'body'            :	'\\\\ll'
+    'description'     :	'Add	'
+    'rightLabelHTML'  :	'\\ll'
+ 	'gg' :
+   	'prefix'          :	'>>'
+   	'body'            :	'\\\\gg'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\gg'
+ 	'subset' :
+   	'prefix'          :	'subset'
+   	'body'            :	'\\\\subset'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\subset'
+ 	'subseteq' :
+   	'prefix'          :	'subset='
+   	'body'            :	'\\\\subseteq'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\subseteq'
+ 	'sqsubset' :
+   	'prefix'          :	'sqsubset'
+   	'body'            :	'\\\\sqsubset'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\sqsubset'
+ 	'sqsubseteq' :
+   	'prefix'          :	'sqsubset='
+   	'body'            :	'\\\\sqsubseteq'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\sqsubseteq'
+ 	'in' :
+   	'prefix'          :	'in'
+   	'body'            :	'\\\\in'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\in'
+ 	'notin' :
+   	'prefix'          :	'notin'
+   	'body'            :	'\\\\notin'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\notin'
+ 	'vdash' :
+   	'prefix'  :	'-|'
+   	'body'            :	'\\\\vdash'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\vdash'
+ 	'join' :
+   	'prefix'          :	'join'
+   	'body'            :	'\\\\join'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\join'
+ 	'sim' :
+   	'prefix'          :	'~'
+   	'body'            :	'\\\\sim'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\sim'
+ 	'equiv' :
+   	'prefix'          :	'equiv'
+   	'body'            :	'\\\\equiv'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\equiv'
+ 	'mid' :
+   	'prefix'          :	'|'
+   	'body'            :	'\\\\mid'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\mid'
+ 	'neq' :
+   	'prefix'          :	'!='
+   	'body'            :	'\\\\neq'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\neq'
+ 	'prep' :
+   	'prefix'          :	'prep'
+   	'body'            :	'\\\\prep'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\prep'
+ 	'dashv' :
+   	'prefix'          :	'dashv'
+   	'body'            :	'\\\\dashv'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\dashv'
+ 	'simeq' :
+   	'prefix'          :	'~='
+   	'body'            :	'\\\\simeq'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\simeq'
+ 	'approx' :
+   	'prefix'          :	'~~'
+   	'body'            :	'\\\\approx'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\approx'
+ 	'cong' :
+   	'prefix'          :	'cong'
+   	'body'            :	'\\\\cong'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\cong'
+ 	'parallel' :
+   	'prefix'          :	'||'
+   	'body'            :	'\\\\parallel'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\parallel'
+ 	'doteq' :
+   	'prefix'          :	'.='
+   	'body'            :	'\\\\doteq'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\doteq'
+ 	'models' :
+   	'prefix'          :	'|='
+   	'body'            :	'\\\\models'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\models'
+ 	'propto' :
+   	'prefix'          :	'propto'
+   	'body'            :	'\\\\propto'
+   	'description'     :	'Add	'
+   	'rightLabelHTML'  :	'\\propto'
+#Greek
+ 	'alpha':
+   	'prefix'          :	'a'
+   	'body'            :	'\\\\alpha'
+   	'description'     :	'Add alpha Greek letter'
+   	'rightLabelHTML'  :	'\\alpha'
+ 	'beta':
+   	'prefix'          :	'b'
+   	'body'            :	'\\\\beta'
+   	'description'     :	'Add beta Greek letter'
+   	'rightLabelHTML'  :	'\\beta'
+ 	'delta':
+   	'prefix'          :	'd'
+   	'body'            :	'\\\\delta'
+   	'description'     :	'Add delta Greek letter'
+   	'rightLabelHTML'  :	'\\delta'
+ 	'Delta':
+   	'prefix'          :	'D'
+   	'body'            :	'\\\\Delta'
+   	'description'     :	'Add Delta Greek letter'
+   	'rightLabelHTML'  :	'\\Delta'
+ 	'epsilon':
+   	'prefix'          :	'e'
+   	'body'            :	'\\\\epsilon'
+   	'description'     :	'Add epsilon Greek letter'
+   	'rightLabelHTML'  :	'\\epsilon'
+ 	'gamma':
+   	'prefix'          :	'g'
+   	'body'            :	'\\\\gamma'
+   	'description'     :	'Add gamma Greek letter'
+   	'rightLabelHTML'  :	'\\gamma'
+ 	'Gamma':
+   	'prefix'          :	'G'
+   	'body'            :	'\\\\Gamma'
+   	'description'     :	'Add Gamma Greek letter'
+   	'rightLabelHTML'  :	'\\Gamma'
+ 	'lambda':
+   	'prefix'          :	'l'
+   	'body'            :	'\\\\lambda'
+   	'description'     :	'Add lambda Greek letter'
+   	'rightLabelHTML'  :	'\\lambda'
+ 	'mu':
+   	'prefix'          :	'm'
+   	'body'            :	'\\\\mu'
+   	'description'     :	'Add mu Greek letter'
+   	'rightLabelHTML'  :	'\\mu'
+ 	'nu':
+   	'prefix'          :	'n'
+   	'body'            :	'\\\\nu'
+   	'description'     :	'Add nu Greek letter'
+   	'rightLabelHTML'  :	'\\nu'
+ 	'omega':
+   	'prefix'          :	'o'
+   	'body'            :	'\\\\omega'
+   	'description'     :	'Add omega Greek letter'
+   	'rightLabelHTML'  :	'\\omega'
+ 	'Omega':
+   	'prefix'          :	'O'
+   	'body'            :	'\\\\Omega'
+   	'description'     :	'Add Omega Greek letter'
+   	'rightLabelHTML'  :	'\\Omega'
+ 	'phi':
+   	'prefix'          :	'p'
+   	'body'            :	'\\\\phi'
+   	'description'     :	'Add phi Greek letter'
+   	'rightLabelHTML'  :	'\\phi'
+ 	'Phi':
+   	'prefix'          :	'P'
+   	'body'            :	'\\\\Phi'
+   	'description'     :	'Add Phi Greek letter'
+   	'rightLabelHTML'  :	'\\Phi'
+ 	'pi':
+   	'prefix'          :	'p'
+   	'body'            :	'\\\\pi'
+   	'description'     :	'Add pi Greek letter'
+   	'rightLabelHTML'  :	'\\pi'
+ 	'Pi':
+   	'prefix'          :	'P'
+   	'body'            :	'\\\\Pi'
+   	'description'     :	'Add Pi Greek letter'
+   	'rightLabelHTML'  :	'\\Pi'
+ 	'psi':
+   	'prefix'          :	'p'
+   	'body'            :	'\\\\psi'
+   	'description'     :	'Add psi Greek letter'
+   	'rightLabelHTML'  :	'\\psi'
+ 	'Psi':
+   	'prefix'          :	'P'
+   	'body'            :	'\\\\Psi'
+   	'description'     :	'Add Psi Greek letter'
+   	'rightLabelHTML'  :	'\\Psi'
+ 	'sigma':
+   	'prefix'          :	's'
+   	'body'            :	'\\\\sigma'
+   	'description'     :	'Add sigma Greek letter'
+   	'rightLabelHTML'  :	'\\sigma'
+ 	'Sigma':
+   	'prefix'          :	'S'
+   	'body'            :	'\\\\Sigma'
+   	'description'     :	'Add Sigma Greek letter'
+   	'rightLabelHTML'  :	'\\Sigma'
+ 	'tau':
+   	'prefix'          :	't'
+   	'body'            :	'\\\\tau'
+   	'description'     :	'Add tau Greek letter'
+   	'rightLabelHTML'  :	'\\tau'
+ 	'theta':
+   	'prefix'          :	't'
+   	'body'            :	'\\\\theta'
+   	'description'     :	'Add theta Greek letter'
+   	'rightLabelHTML'  :	'\\theta'
+ 	'Theta':
+   	'prefix'          :	'T'
+   	'body'            :	'\\\\Theta'
+   	'description'     :	'Add Theta Greek letter'
+   	'rightLabelHTML'  :	'\\Theta'
+ 	'varepsilon':
+   	'prefix'          :	'ev'
+   	'body'            :	'\\\\varepsilon'
+   	'description'     :	'Add varepsilon Greek letter'
+   	'rightLabelHTML'  :	'\\varepsilon'
+ 	'varphi 	':
+   	'prefix'          :	'pv'
+   	'body'            :	'\\\\varphi'
+   	'description'     :	'Add varphi Greek letter'
+   	'rightLabelHTML'  :	'\\varphi'
+# Symbol
+  'pm'  :
+    'prefix'          : 'pm'
+    'body'            : '\\\\pm'
+    'description'     : 'Add pm Symbol'
+    'rightLabelHTML'  : '\\pm'
+  'times' :
+    'prefix'          : 'times'
+    'body'            : '\\\\times'
+    'description'     : 'Add times Symbol'
+    'rightLabelHTML'  : '\\times'
+  'top' :
+    'prefix'          : 'top'
+    'body'            : '\\\\top'
+    'description'     : 'Add top Symbol'
+    'rightLabelHTML'  : '\\top'
+  'forall'  :
+    'prefix'          : 'forall'
+    'body'            : '\\\\forall'
+    'description'     : 'Add forall Symbol'
+    'rightLabelHTML'  : '\\forall'
+  'neg' :
+    'prefix'          : 'neg'
+    'body'            : '\\\\neg'
+    'description'     : 'Add neg Symbol'
+    'rightLabelHTML'  : '\\neg'
+  'div' :
+    'prefix'          : 'div'
+    'body'            : '\\\\div'
+    'description'     : 'Add div Symbol'
+    'rightLabelHTML'  : '\\div'
+  'bot' :
+    'prefix'          : 'bot'
+    'body'            : '\\\\bot'
+    'description'     : 'Add bot Symbol'
+    'rightLabelHTML'  : '\\bot'
+  'exists'  :
+    'prefix'          : 'exists'
+    'body'            : '\\\\exists'
+    'description'     : 'Add exists Symbol'
+    'rightLabelHTML'  : '\\exists'
+  'infty' :
+    'prefix'          : 'infty'
+    'body'            : '\\\\infty'
+    'description'     : 'Add infty Symbol'
+    'rightLabelHTML'  : '\\infty'
+  'emptyset'  :
+    'prefix'          : 'emptyset'
+    'body'            : '\\\\emptyset'
+    'description'     : 'Add emptyset Symbol'
+    'rightLabelHTML'  : '\\emptyset'
+  'Box' :
+    'prefix'          : 'Box'
+    'body'            : '\\\\Box'
+    'description'     : 'Add Box Symbol'
+    'rightLabelHTML'  : '\\Box'
+  'Diamond' :
+    'prefix'          : 'Diamond'
+    'body'            : '\\\\Diamond'
+    'description'     : 'Add Diamond Symbol'
+    'rightLabelHTML'  : '\\Diamond'
+#Logic
+  'cap' :
+    'prefix'          : 'cap'
+    'body'            : '\\\\cap'
+    'description'     : 'Add cap Logic Symbol'
+    'rightLabelHTML'  : '\\cap'
+  'cup' :
+    'prefix'          : 'cup'
+    'body'            : '\\\\cup'
+    'description'     : 'Add cup Logic Symbol'
+    'rightLabelHTML'  : '\\cup'
+  'vee' :
+    'prefix'          : 'vee'
+    'body'            : '\\\\vee'
+    'description'     : 'Add vee Logic Symbol'
+    'rightLabelHTML'  : '\\vee'
+  'setminus'  :
+    'prefix'          : 'setminus'
+    'body'            : '\\\\setminus'
+    'description'     : 'Add setminus Logic Symbol'
+    'rightLabelHTML'  : '\\setminus'
+  'oplus' :
+    'prefix'          : 'oplus'
+    'body'            : '\\\\oplus'
+    'description'     : 'Add oplus Logic Symbol'
+    'rightLabelHTML'  : '\\oplus'
+  'otimes'  :
+    'prefix'          : 'otimes'
+    'body'            : '\\\\otimes'
+    'description'     : 'Add otimes Logic Symbol'
+    'rightLabelHTML'  : '\\otimes'
+  'odot'  :
+    'prefix'          : 'odot'
+    'body'            : '\\\\odot'
+    'description'     : 'Add odot Logic Symbol'
+    'rightLabelHTML'  : '\\odot'
+  'ast' :
+    'prefix'          : 'ast'
+    'body'            : '\\\\ast'
+    'description'     : 'Add ast Logic Symbol'
+    'rightLabelHTML'  : '\\ast'
+  'wedge' :
+    'prefix'          : 'wedge'
+    'body'            : '\\\\wedge'
+    'description'     : 'Add wedge Logic Symbol'
+    'rightLabelHTML'  : '\\wedge'
+  'ominus'  :
+    'prefix'          : 'ominus'
+    'body'            : '\\\\ominus'
+    'description'     : 'Add ominus Logic Symbol'
+    'rightLabelHTML'  : '\\ominus'
+  'oslash'  :
+    'prefix'          : 'oslash'
+    'body'            : '\\\\oslash'
+    'description'     : 'Add oslash Logic Symbol'
+    'rightLabelHTML'  : '\\oslash'
+  'bigcirc' :
+    'prefix'          : 'bigcirc'
+    'body'            : '\\\\bigcirc'
+    'description'     : 'Add bigcirc Logic Symbol'
+    'rightLabelHTML'  : '\\bigcirc'
+  'star'  :
+    'prefix'          : 'star'
+    'body'            : '\\\\star'
+    'description'     : 'Add star Logic Symbol'
+    'rightLabelHTML'  : '\\star'
+#Arrow
+  'downarrow' :
+    'prefix'          : 'downarrow'
+    'body'            : '\\\\downarrow'
+    'description'     : 'Add \\downarrow Arrow'
+    'rightLabelHTML'  : '\\downarrow'
+  'Downarrow' :
+    'prefix'          : 'Downarrow'
+    'body'            : '\\\\Downarrow'
+    'description'     : 'Add \\Downarrow Arrow'
+    'rightLabelHTML'  : '\\Downarrow'
+  'leftarrow' :
+    'prefix'          : 'leftarrow'
+    'body'            : '\\\\leftarrow'
+    'description'     : 'Add \\leftarrow Arrow'
+    'rightLabelHTML'  : '\\leftarrow'
+  'Leftarrow' :
+    'prefix'          : 'Leftarrow'
+    'body'            : '\\\\Leftarrow'
+    'description'     : 'Add \\Leftarrow Arrow'
+    'rightLabelHTML'  : '\\Leftarrow'
+  'leftrightarrow'  :
+    'prefix'          : 'leftrightarrow'
+    'body'            : '\\\\leftrightarrow'
+    'description'     : 'Add \\leftrightarrow Arrow'
+    'rightLabelHTML'  : '\\leftrightarrow'
+  'Leftrightarrow'  :
+    'prefix'          : 'Leftrightarrow'
+    'body'            : '\\\\Leftrightarrow'
+    'description'     : 'Add \\Leftrightarrow Arrow'
+    'rightLabelHTML'  : '\\Leftrightarrow'
+  'longleftarrow' :
+    'prefix'          : 'longleftarrow'
+    'body'            : '\\\\longleftarrow'
+    'description'     : 'Add \\longleftarrow Arrow'
+    'rightLabelHTML'  : '\\longleftarrow'
+  'Longleftarrow' :
+    'prefix'          : 'Longleftarrow'
+    'body'            : '\\\\Longleftarrow'
+    'description'     : 'Add \\Longleftarrow Arrow'
+    'rightLabelHTML'  : '\\Longleftarrow'
+  'longleftrightarrow'  :
+    'prefix'          : 'longleftrightarrow'
+    'body'            : '\\\\longleftrightarrow'
+    'description'     : 'Add \\longleftrightarrow Arrow'
+    'rightLabelHTML'  : '\\longleftrightarrow'
+  'Longleftrightarrow'  :
+    'prefix'          : 'Longleftrightarrow'
+    'body'            : '\\\\Longleftrightarrow'
+    'description'     : 'Add \\Longleftrightarrow Arrow'
+    'rightLabelHTML'  : '\\Longleftrightarrow'
+  'longmapsto'  :
+    'prefix'          : 'longmapsto'
+    'body'            : '\\\\longmapsto'
+    'description'     : 'Add \\longmapsto Arrow'
+    'rightLabelHTML'  : '\\longmapsto'
+  'longrightarrow'  :
+    'prefix'          : 'longrightarrow'
+    'body'            : '\\\\longrightarrow'
+    'description'     : 'Add \\longrightarrow Arrow'
+    'rightLabelHTML'  : '\\longrightarrow'
+  'Longrightarrow'  :
+    'prefix'          : 'Longrightarrow'
+    'body'            : '\\\\Longrightarrow'
+    'description'     : 'Add \\Longrightarrow Arrow'
+    'rightLabelHTML'  : '\\Longrightarrow'
+  'mapsto'  :
+    'prefix'          : 'mapsto'
+    'body'            : '\\\\mapsto'
+    'description'     : 'Add \\mapsto Arrow'
+    'rightLabelHTML'  : '\\mapsto'
+  'nearrow' :
+    'prefix'          : 'nearrow'
+    'body'            : '\\\\nearrow'
+    'description'     : 'Add \\nearrow Arrow'
+    'rightLabelHTML'  : '\\nearrow'
+  'nwarrow' :
+    'prefix'          : 'nwarrow'
+    'body'            : '\\\\nwarrow'
+    'description'     : 'Add \\nwarrow Arrow'
+    'rightLabelHTML'  : '\\nwarrow'
+  'rightarrow'  :
+    'prefix'          : 'rightarrow'
+    'body'            : '\\\\rightarrow'
+    'description'     : 'Add \\rightarrow Arrow'
+    'rightLabelHTML'  : '\\rightarrow'
+  'Rightarrow'  :
+    'prefix'          : 'Rightarrow'
+    'body'            : '\\\\Rightarrow'
+    'description'     : 'Add \\Rightarrow Arrow'
+    'rightLabelHTML'  : '\\Rightarrow'
+  'searrow' :
+    'prefix'          : 'searrow'
+    'body'            : '\\\\searrow'
+    'description'     : 'Add \\searrow Arrow'
+    'rightLabelHTML'  : '\\searrow'
+  'swarrow' :
+    'prefix'          : 'swarrow'
+    'body'            : '\\\\swarrow'
+    'description'     : 'Add \\swarrow Arrow'
+    'rightLabelHTML'  : '\\swarrow'
+  'uparrow' :
+    'prefix'          : 'uparrow'
+    'body'            : '\\\\uparrow'
+    'description'     : 'Add \\uparrow Arrow'
+    'rightLabelHTML'  : '\\uparrow'
+  'Uparrow' :
+    'prefix'          : 'Uparrow'
+    'body'            : '\\\\Uparrow'
+    'description'     : 'Add \\Uparrow Arrow'
+    'rightLabelHTML'  : '\\Uparrow'
+  'updownarrow' :
+    'prefix'          : 'updownarrow'
+    'body'            : '\\\\updownarrow'
+    'description'     : 'Add \\updownarrow Arrow'
+    'rightLabelHTML'  : '\\updownarrow'
+  'Updownarrow' :
+    'prefix'          : 'Updownarrow'
+    'body'            : '\\\\Updownarrow'
+    'description'     : 'Add \\Updownarrow Arrow'
+    'rightLabelHTML'  : '\\Updownarrow'

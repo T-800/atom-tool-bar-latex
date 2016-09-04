@@ -1,0 +1,149 @@
+// The ui-variables file is provided by themes provided by Atom.
+@import "ui-variables";
+
+.tool-bar-latex-dialog {
+  .dialog-row {
+    margin-bottom: 10px;
+  }
+
+  .side-label {
+    margin-left: 10px;
+  }
+
+  .image-container {
+    max-height: 320px;
+    overflow: scroll;
+
+    img {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .col-1 {
+    display: inline-block;
+    width: 31%;
+    margin-right: 2%;
+  }
+
+  .col-2 {
+    display: inline-block;
+    width: 34%;
+  }
+}
+
+.tool-bar-latex-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 170px;
+  overflow: scroll;
+
+  li {
+    padding: 5px 3px;
+    border: 1px solid @button-border-color;
+    background-color: @button-background-color;
+    margin-bottom: 2px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: @button-background-color-hover;
+      color: @text-color-highlight;
+    }
+  }
+}
+
+.tool-bar-latex-selection {
+  .candidates {
+    list-style: none;
+    padding: 0;
+    height: 209px;
+    overflow-y: scroll;
+
+    li {
+      display: inline-block;
+      padding: 5px;
+      margin: 0 2px 2px 0;
+      border: 1px solid @button-border-color;
+      background-color: @button-background-color;
+      cursor: pointer;
+
+      &.selected {
+        background-color: @button-background-color-selected;
+        color: @text-color-selected;
+
+        &:hover {
+          background-color: @background-color-success;
+          color: @text-color-highlight;
+        }
+      }
+
+      &:hover {
+        background-color: @button-background-color-hover;
+        color: @text-color-highlight;
+      }
+    }
+  }
+}
+
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+//
+@import "ui-variables";
+.tool-bar-latex {
+  @bg: @base-background-color;
+
+  padding: 16px;
+
+  .splitter {
+    width: 100%;
+    height: 1px;
+    margin-bottom: 16px;
+    // border-bottom-style: dotted;
+    background-color: contrast(@bg, lighten(@bg, 4%), darken(@bg, 4%));
+
+  }
+
+  .drop-area {
+    text-align: center;
+    height: 64px;
+    border-style: dashed;
+    cursor: pointer;
+    margin-bottom: 32px;
+    background-color: darken(@bg, 2%);
+
+    &:hover {
+      background-color: contrast(@bg, lighten(@bg, 4%), darken(@bg, 4%));
+    }
+
+    p {
+      margin: 0;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.uploader {
+      margin-bottom: 12px;
+    }
+  }
+
+  .align-choice {
+    margin-bottom: 24px;
+
+    select {
+      background-color: darken(@bg, 4%);
+      border-color: lighten(@bg, 10%);
+      margin: 0 6px;
+    }
+  }
+
+  .close-btn, .add-btn {
+    margin-right: 16px;
+    width: 64px;
+    text-align: center;
+    padding: 0;
+  }
+}
