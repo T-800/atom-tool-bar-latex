@@ -236,8 +236,6 @@ module.exports =
     @disposables = null
     @toolBar?.removeItems()
 
-
-
   trigger: (e) ->
     editor = atom.workspace.getActiveTextEditor()
     curPos = editor.getCursorBufferPosition()
